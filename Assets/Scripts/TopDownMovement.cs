@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour
 {    
-    private Rigidbody2D movementRigidbody;
-    private TopDownController controller;      
+    Rigidbody2D rb;
+    TopDownController controller;      
 
     private Vector2 movementDirection = Vector2.zero;
+    public float speed = 5f;
 
     private void Awake()
     {        
-        movementRigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         controller = GetComponent<TopDownController>();
     }
 
@@ -19,7 +20,7 @@ public class TopDownMovement : MonoBehaviour
         controller.OnMoveEvent += Move;
     }
 
-    private void Move(Vector2 direction)
+    void Move(Vector2 direction)
     {
         movementDirection = direction;
     }
@@ -29,9 +30,9 @@ public class TopDownMovement : MonoBehaviour
         ApplyMovement(movementDirection);
     }
 
-    private void ApplyMovement(Vector2 direction)
+    void ApplyMovement(Vector2 direction)
     {
-        direction = direction * 2f;
-        movementRigidbody.velocity = direction;
+        direction *= speed;
+        rb.velocity = direction;
     }
 }

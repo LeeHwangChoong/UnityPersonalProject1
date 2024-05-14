@@ -15,16 +15,16 @@ public class PlayerInputController : TopDownController
     public void OnMove(InputValue value)
     {
         Vector2 moveInput = value.Get<Vector2>().normalized;
-        CallMoveEvent(moveInput);
-        Debug.Log("Move Input: " + moveInput);
+        CallMoveEvent(moveInput);        
     }
 
     public void OnLook(InputValue value)
     {
-        Vector2 newAim = value.Get<Vector2>();
-        Vector2 worldPos = camera.ScreenToWorldPoint(newAim);
-        newAim = (worldPos - (Vector2)transform.position).normalized;
+        Vector2 mosPos = value.Get<Vector2>();
+        Vector2 worldPos = Camera.main.ScreenToWorldPoint(mosPos);
 
-        CallLookEvent(newAim);
+        Vector2 dir = (worldPos - (Vector2)transform.position).normalized;
+
+        CallLookEvent(dir);
     }
 }
