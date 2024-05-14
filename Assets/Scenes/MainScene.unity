@@ -16918,6 +16918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3d535c331bf7d40944f31addfd4295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!114 &2006246438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16944,7 +16945,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Player Input
+  m_DefaultControlScheme: KeyboradMouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
